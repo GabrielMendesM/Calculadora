@@ -31,12 +31,13 @@
             <input type="button" value="8" class="btn-num" onclick="numero(8)">
             <input type="button" value="9" class="btn-num" onclick="numero(9)">
             <input type="button" value="0" class="btn-num" onclick="numero(0)">
+            <input type="button" value="," class="btn-num" onclick="numero(-1)">
         </div>
         <div id="btns-oper">
-            <input type="button" value="+" class="btn-oper" onclick="somar()">
-            <input type="button" value="-" class="btn-oper" onclick="subtrair()">
-            <input type="button" value="&#215" class="btn-oper" onclick="multiplicar()">
-            <input type="button" value="&#247" class="btn-oper" onclick="dividir()">
+            <input type="button" value="+" class="btn-oper" onclick="operação('somar')">
+            <input type="button" value="-" class="btn-oper" onclick="operação('subtrair')">
+            <input type="button" value="&#215" class="btn-oper" onclick="operação('multiplicar')">
+            <input type="button" value="&#247" class="btn-oper" onclick="operação('dividir')">
             <input type="button" value="=" class="btn-oper" onclick="calcular()">
         </div>
     <!--       <div id="res">
