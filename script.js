@@ -68,7 +68,9 @@ function limparTudo() {
 
 function somar() {
     if (resAnterior) {
-
+        res += resAnterior;
+    } else {
+        resAnterior = res;
     }
     atualizarTela("somar");
 }
