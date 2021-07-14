@@ -1,3 +1,9 @@
+var resultado = {
+    anterior: "",
+    atual: "",
+    operação: ""
+};
+
 var res;
 var resAnterior;
 var resAnteriorTxt;
@@ -129,7 +135,7 @@ function operação(op) {
                 res = 0;
                 */
             } else {
-                
+
             }
             atualizarTela(op);
             break;
