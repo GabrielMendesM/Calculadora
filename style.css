@@ -1,0 +1,76 @@
+:root {
+    --cor1: #F3FEB0;
+    --cor2: #FEA443;
+    --cor3: #705E78;
+    --cor4: #A5AAA3;
+    --cor5: #812F33;
+
+    --fonte1: 'Courier New', Courier, monospace;
+    --fonte2: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --fonte3: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: var(--cor1);
+    margin: 0;
+}
+
+header {
+    font-family: var(--fonte2);
+    font-size: 20px;
+    color: var(--cor5);
+    text-align: center;
+    padding: 1px;
+}
+
+section {
+    font-family: var(--fonte1);
+    font-weight: bold;
+    font-size: 12pt;
+    background-color: var(--cor5);
+    color: var(--cor5);
+    width: 400px;
+    height: 200px;
+    padding: 10px 10px;
+    margin: 0px auto 0px auto;
+    border: var(--cor2) solid 3px;
+}
+
+#res {
+    background-color: var(--cor4);
+    width: 300px;
+    height: 20px;
+    margin: 0px auto 30px auto;
+    text-align: right;
+}
+
+#input-container {
+    text-align: center;
+}
+
+.btn {
+    width: 30px;
+}
+
+#btns-container {
+    margin: 1px 2px 3px 4px;
+    text-align: center;
+}
+
+#btns-linha1 {
+    margin: 10px 0px 0px 0px;
+}
+
+#btns-linha2 {
+    margin: 10px 0px 0px 0px;
+}
+
+footer {
+    font-family: var(--fonte3);
+    font-size: 8pt;
+    margin: auto;
+    text-align: center;
+    background-color: var(--cor5);
+    color: var(--cor1);
+    padding: 5px 0px;
+}
