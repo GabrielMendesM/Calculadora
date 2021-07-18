@@ -4,6 +4,168 @@ var resultado = {
     operação: ""
 };
 
+aaa = () => {
+    alert(`atual: ${resultado.atual}\nanterior: ${resultado.anterior}\noperação: ${resultado.operação}`);
+}
+
+atualizarTela = (operacao) => {
+    var resTxt = document.getElementById("resultado");
+    var txtAux;
+
+    switch (operacao) {
+        case "+":
+            txtAux = `${resultado.anterior} + ${resultado.atual}`;
+            break;
+        
+        case "-":
+            txtAux = `${resultado.anterior} - ${resultado.atual}`;
+            break;
+
+        case "&#215":
+            txtAux = `${resultado.anterior} &#215 ${resultado.atual}`;
+            break;
+
+        case "&#247":
+            txtAux = `${resultado.anterior} &#247 ${resultado.atual}`;
+            break;
+
+        case "limpar":
+            if (resultado.anterior) {
+                txtAux = String(resultado.anterior);
+            } else {
+                txtAux = 0;
+            }
+            break;
+
+        case "limparTudo":
+            txtAux = 0;
+            break;
+
+        case "calcular":
+            if (resultado.anterior) {
+                txtAux = resultado.anterior;
+            } else if (resultado.atual) {
+                txtAux = resultado.atual;
+            } else {
+                txtAux = 0;
+            }
+            break;
+
+        default:
+            if (resultado.anterior) {
+                txtAux = `${resultado.anterior} ${resultado.operação} ${resultado.atual}`;
+            } else {
+                txtAux = `${resultado.atual}`;
+            }
+            break;
+    }
+    if (String(txtAux).indexOf(".") !== -1) {
+        String().replace(".", ",");
+    }
+    resTxt.innerHTML = `<p>${txtAux}</p>`;
+}
+
+var numero = (n) => {
+    if (resultado.anterior && !resultado.atual && !resultado.operação) {
+        resultado.anterior = "";
+    }
+    if (n == -1) {
+        if (resultado.atual && String(resultado.atual).indexOf(",") === -1) {
+            resultado.atual += ".";
+        } else {
+            resultado.atual = "0.";
+        }
+    } else {
+        if (resultado.atual == 0 && n == 0) {
+            resultado.atual = 0;
+        } else {
+            if (resultado.atual) {
+                resultado.atual == 0 ? resultado.atual = String(n) : resultado.atual += String(n);
+            }
+            else {
+                resultado.atual = String(n);
+            }
+        }
+    }
+    atualizarTela(null);
+}
+
+operação = (op) => {
+    switch (op) {
+        case "somar":
+            op = "+";
+            break;
+
+        case "subtrair":
+            op = "-";
+            break;
+
+        case "multiplicar":
+            op = "&#215";
+            break;
+
+        case "dividir":
+            op = "&#247";
+            break;
+    }
+    if (resultado.anterior) {
+        calcular();
+    } else if (resultado.atual) {
+        resultado.anterior = resultado.atual;
+    } else {
+        resultado.atual = 0;
+    }
+    if (op === "calcular") {
+        resultado.operação = "";
+        resultado.atual = "";
+    } else {
+        resultado.operação = op;
+        resultado.atual = "";
+    }
+
+    if (resultado.anterior) {
+        atualizarTela(op);
+    }
+}
+
+limpar = () => {
+    resultado.atual = "";
+    atualizarTela("limpar");
+}
+limparTudo = () => {
+    resultado.atual = "";
+    resultado.anterior = "";
+    resultado.operação = "";
+    atualizarTela("limparTudo");
+}
+
+calcular = () => {
+    resultado.atual ? resultado.atual = Number(resultado.atual) : resultado.atual = 0;
+
+    resultado.anterior ? resultado.anterior = Number(resultado.anterior) : resultado.anterior = 0;
+
+    switch(resultado.operação) {
+        case "+":
+            resultado.anterior += resultado.atual;
+            break;
+
+        case "-":
+            resultado.anterior -= resultado.atual;
+            break;
+
+        case "&#215":
+            resultado.anterior *= resultado.atual;
+            break;
+
+        case "&#247":
+            resultado.anterior /= resultado.atual;
+            break;
+    }
+
+    resultado.atual = "";
+}
+
+/*
 var res;
 var resAnterior;
 var resAnteriorTxt;
@@ -133,7 +295,7 @@ function operação(op) {
                     resAnterior = res;
                 }
                 res = 0;
-                */
+                
             } else {
 
             }
@@ -177,7 +339,7 @@ function operação(op) {
             break;
     }
 }
-/*
+
 function somar() {
     operacao();
 }
@@ -237,7 +399,7 @@ function calcular() {
     atualizarTela("somar");
 }
 
-/*
+
 var res = null;
 
 var inputUsuário = () => {
