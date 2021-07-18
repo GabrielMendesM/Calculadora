@@ -40,7 +40,7 @@ div#resultado {
     font-family: var(--fonte3);
     text-align: right;
     background-color: black;
-    width: 150px;
+    width: 90%;
     padding: 0 5px 0 0px;
     margin: auto;
 }
@@ -50,11 +50,11 @@ div#resultado {
 }
 .btn-outro {
     text-align: center;
-    width: 34px;
+    width: 29%;
 }
 
 #btns-num {
-    width: 100px;
+    width: 50%;
     margin: auto;
 }
 .btn-num {
@@ -62,12 +62,12 @@ div#resultado {
 }
 
 #btns-oper {
-    width: 140px;
+    width: 80%;
     margin: 10px auto;
 }
 .btn-oper {
     margin: 4px 0;
-    width: 25px;
+    width: 17%;
 }
 
 #res {
