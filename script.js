@@ -59,28 +59,28 @@ atualizarTela = (operacao) => {
             }
             break;
     }
-    if (String(txtAux).indexOf(".") !== -1) {
-        String().replace(".", ",");
-    }
     resTxt.innerHTML = `<p>${txtAux}</p>`;
 }
 
 var numero = (n) => {
+    resultado.atual = String(resultado.atual);
+    resultado.anterior = String(resultado.anterior);
+    
     if (resultado.anterior && !resultado.atual && !resultado.operação) {
         resultado.anterior = "";
     }
-    if (n == -1) {
-        if (resultado.atual && String(resultado.atual).indexOf(",") === -1) {
+    if (n === -1) {
+        if (resultado.atual && resultado.atual.indexOf(".") === -1) {
             resultado.atual += ".";
-        } else {
+        } else if (!resultado.atual) {
             resultado.atual = "0.";
         }
     } else {
-        if (resultado.atual == 0 && n == 0) {
-            resultado.atual = 0;
+        if (resultado.atual === "0" && n === 0) {
+            resultado.atual = "0";
         } else {
             if (resultado.atual) {
-                resultado.atual == 0 ? resultado.atual = String(n) : resultado.atual += String(n);
+                resultado.atual === "0" ? resultado.atual = String(n) : resultado.atual += String(n);
             }
             else {
                 resultado.atual = String(n);
