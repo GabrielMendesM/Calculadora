@@ -17,7 +17,7 @@ body {
 
 header {
     font-family: var(--fonte2);
-    font-size: 20px;
+    font-size: 100%;
     color: var(--cor5);
     text-align: center;
     padding: 1px;
@@ -43,6 +43,11 @@ div#resultado {
     width: 90%;
     padding: 0 5px 0 0px;
     margin: auto;
+}
+
+input {
+    font-size: 80%;
+    font-family: var(--fonte2);
 }
 
 #btns-outro {
