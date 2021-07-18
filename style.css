@@ -72,8 +72,6 @@ div#resultado {
 
 #res {
     background-color: var(--cor4);
-    width: 300px;
-    height: 20px;
     margin: 0px auto 30px auto;
     text-align: right;
 }
