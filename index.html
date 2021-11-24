@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <!--<link rel="stylesheet" href="style.css">-->
     <link rel="stylesheet" href="style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/icones/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icones/favicon-32x32.png">
@@ -15,33 +16,35 @@
         <h1>CALCULADORA</h1>
     </header>
     <section>
-        <div id="resultado"><p>0</p></div>
-        <div id="btns-outro">
-            <input type="button" value="CE" class="btn-outro" onclick="limpar()">
-            <input type="button" value="C" class="btn-outro" onclick="limparTudo()">
-        </div>
-        <div id="btns-num">
-            <input type="button" value="1" class="btn-num" onclick="numero(1)">
-            <input type="button" value="2" class="btn-num" onclick="numero(2)">
-            <input type="button" value="3" class="btn-num" onclick="numero(3)">
-            <input type="button" value="4" class="btn-num" onclick="numero(4)">
-            <input type="button" value="5" class="btn-num" onclick="numero(5)">
-            <input type="button" value="6" class="btn-num" onclick="numero(6)">
-            <input type="button" value="7" class="btn-num" onclick="numero(7)">
-            <input type="button" value="8" class="btn-num" onclick="numero(8)">
-            <input type="button" value="9" class="btn-num" onclick="numero(9)">
-            <input type="button" value="0" class="btn-num" onclick="numero(0)">
-            <input type="button" value="," class="btn-num" onclick="numero(-1)">
-        </div>
-        <div id="btns-oper">
-            <input type="button" value="+" class="btn-oper" onclick="operação('somar')">
-            <input type="button" value="-" class="btn-oper" onclick="operação('subtrair')">
-            <input type="button" value="&#215" class="btn-oper" onclick="operação('multiplicar')">
-            <input type="button" value="&#247" class="btn-oper" onclick="operação('dividir')">
-            <input type="button" value="=" class="btn-oper" onclick="operação('calcular')">
+        <div id="conta-atual"></div>
+        <div id="res"></div>
+        <div id="botões">
+            <div id="btns-limpar">
+                <input class="botão" type="button" value="CE" onclick="limpar(true)">
+                <input class="botão" type="button" value="C" onclick="limpar(false)">
+            </div>
+            <div id="btns-num">
+                <input class="botão" type="button" value="1" onclick="entrarNum(1)">                
+                <input class="botão" type="button" value="2" onclick="entrarNum(2)">
+                <input class="botão" type="button" value="3" onclick="entrarNum(3)">
+                <input class="botão" type="button" value="4" onclick="entrarNum(4)">
+                <input class="botão" type="button" value="5" onclick="entrarNum(5)">
+                <input class="botão" type="button" value="6" onclick="entrarNum(6)">
+                <input class="botão" type="button" value="7" onclick="entrarNum(7)">
+                <input class="botão" type="button" value="8" onclick="entrarNum(8)">
+                <input class="botão" type="button" value="9" onclick="entrarNum(9)">
+                <input class="botão" type="button" value="0" onclick="entrarNum(0)">
+                <input class="botão" type="button" value="," onclick="entrarNum(',')">
+            </div>
+            <div id="btns-oper">
+                <input class="botão" type="button" value="+" onclick="entrarOper('+')">
+                <input class="botão" type="button" value="-" onclick="entrarOper('-')">
+                <input class="botão" type="button" value="&#215" onclick="entrarOper('*')">
+                <input class="botão" type="button" value="&#247" onclick="entrarOper('/')">                
+                <input class="botão" type="button" value="=" onclick="entrarOper('=')">   
+            </div>
         </div>
     </section>
-    <input type="button" value="AAAAAAAAAA" onclick="aaa()">
     <script src="script.js"></script>
 </body>
 </html>
